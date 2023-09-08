@@ -1,4 +1,6 @@
 ---
+# M2i - Olivier TENGHERIAN
+#
 # Un playbook commence généralement par '---', ce qui indique le début d'un document YAML.
 # Nom du playbook : Une description courte et significative de ce que fait le playbook.
 - name: Playbook AtelierAnsible
@@ -15,13 +17,14 @@
           - make
         state: present
     # INSTALLER nodejs VIA yum
-    - name: NODE.js | install
+    # spécification de " enablerepo: epel " pour utiliser le dépôt EPEL souvent utilisé pour obtenir Node.js sur les systèmes basés sur YUM
+    - name: NODE.js | Install
       ansible.builtin.yum:
         name: nodejs
         state: present
-        enablerepo: epel
+        enablerepo: epel  # Utiliser le dépôt EPEL pour Node.js
     # INSTALLER gatsby-cli VIA npm
-    - name: gatsby-cli install
+    - name: gatsby-cli | Install
       ansible.builtin.npm:
         name: gatsby-cli
         state: present
