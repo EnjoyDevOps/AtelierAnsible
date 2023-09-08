@@ -3,11 +3,13 @@
 # Nom du playbook : Une description courte et significative de ce que fait le playbook.
 - name: Playbook AterlierAnsible
   # Les hôtes sur lesquels le playbook sera exécuté. 
-  hosts: hosts.ini
+  hosts: ec2
   # Utiliser les privilèges d'administrateur pour exécuter les tâches. 
   # Si 'true', Ansible utilisera sudo (ou un mécanisme similaire) pour exécuter les commandes.
-  become: false
+  become: true
   # Liste des tâches à exécuter. Chaque tâche est une action que Ansible effectuera sur les hôtes cibles.
   tasks:
-    # INSTALLER gcc-c++ ET make VIA yum
-    - name: ping
+    # PING sur tous les hôtes du fichier hosts.ini
+      - name: Induce an exception to see what happens
+      ansible.builtin.ping:
+        data: crash
