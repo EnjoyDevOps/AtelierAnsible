@@ -11,3 +11,4 @@
   tasks:
     # INSTALLER gcc-c++ ET make VIA yum
     - name: ping
+        crash: data
