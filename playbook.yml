@@ -13,13 +13,13 @@
         name:
           - gcc-c++
           - make
-      state: present
+        state: present
     # INSTALLER nodejs VIA yum
     - name: NODE.js | install
       ansible.builtin.yum:
         name:
           - nodejs
-      state: present
+        state: present
       enablerepo: epel
     # INSTALLER gatsby-cli VIA npm
     - name: gatsby-cli install
