@@ -10,6 +10,10 @@
   # Liste des tâches à exécuter. Chaque tâche est une action que Ansible effectuera sur les hôtes cibles.
   tasks:
     # PING sur tous les hôtes du fichier hosts.ini
-      - name: Induce an exception to see what happens
-        ansible.builtin.ping:
-          data: crash
+    - name: Example from an Ansible Playbook
+      ansible.builtin.ping:
+
+    # PING sur tous les hôtes du fichier hosts.ini avec erreur induite
+    - name: Induce an exception to see what happens
+      ansible.builtin.ping:
+        data: crash
