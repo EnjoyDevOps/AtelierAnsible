@@ -3,7 +3,7 @@
 # Nom du playbook : Une description courte et significative de ce que fait le playbook.
 - name: Playbook AterlierAnsible
   # Les hôtes sur lesquels le playbook sera exécuté. 
-  hosts: ec2
+  hosts: target_ec2
   # Utiliser les privilèges d'administrateur pour exécuter les tâches. 
   # Si 'true', Ansible utilisera sudo (ou un mécanisme similaire) pour exécuter les commandes.
   become: true
