@@ -4,10 +4,8 @@
 - name: Playbook AtelierAnsible
   # Les hôtes sur lesquels le playbook sera exécuté. 
   hosts: ec2
-  # Utiliser les privilèges d'administrateur pour exécuter les tâches. 
-  # Si 'true', Ansible utilisera sudo (ou un mécanisme similaire) pour exécuter les commandes.
   become: true
-  # Liste des tâches à exécuter. Chaque tâche est une action que Ansible effectuera sur les hôtes cibles.
+  # Liste des tâches à exécuter
   tasks:
     # INSTALLER gcc-c++ ET make VIA yum
     - name: GCC | Install C++
@@ -26,9 +24,5 @@
     # INSTALLER gatsby-cli VIA npm
     - name: gatsby-cli install
       ansible.builtin.npm:
-        name: gatsby-cli
-
-# 3 TASKS:
-#    1- INSTALLER gcc-c++ ET make VIA yum
-#    2- INSTALLER nodejs VIA yum
-#    3- INSTALLER gatsby-cli VIA npm
+        name: 
+          - gatsby-cli
