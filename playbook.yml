@@ -17,12 +17,11 @@
     # INSTALLER nodejs VIA yum
     - name: NODE.js | install
       ansible.builtin.yum:
-        name:
-          - nodejs
+        name: nodejs
         state: present
-      enablerepo: epel
+        enablerepo: epel
     # INSTALLER gatsby-cli VIA npm
     - name: gatsby-cli install
       ansible.builtin.npm:
-        name: 
-          - gatsby-cli
+        name: gatsby-cli
+        state: present
